@@ -1,4 +1,4 @@
-﻿/*Напишите программу, которая спрашивает у пользователя номер месяца и выводит на экран название месяца, введённого пользователем.
+/*Напишите программу, которая спрашивает у пользователя номер месяца и выводит на экран название месяца, введённого пользователем.
 
 Если пользователь ввёл некорректный номер месяца - сообщите ему об этом
 
@@ -8,7 +8,7 @@
 
 using namespace std;
 
-enum month
+enum class month
 {
 	January = 1,
 	February,
@@ -44,62 +44,62 @@ int main()
 				break;
 			}
 		case 1:
-			if (input == month::January)
+			if (input == static_cast<int>(month::January))
 			{
 				cout << "Январь" << endl;
 			}
 		case 2:
-			if (input == month::February)
+			if (input == static_cast<int>(month::February))
 			{
 				cout << "Февраль" << endl;
 			}
 		case 3:
-			if (input == month::March)
+			if (input == static_cast<int>(month::March))
 			{
 				cout << "Март" << endl;
 			}
 		case 4:
-			if (input == month::April)
+			if (input == static_cast<int>(month::April))
 			{
 				cout << "Апрель" << endl;
 			}
 		case 5:
-			if (input == month::May)
+			if (input == static_cast<int>(month::May))
 			{
 				cout << "Май" << endl;
 			}
 		case 6:
-			if (input == month::June)
+			if (input == static_cast<int>(month::June))
 			{
 				cout << "Июнь" << endl;
 			}
 		case 7:
-			if (input == month::July)
+			if (input == static_cast<int>(month::July))
 			{
 				cout << "Июль" << endl;
 			}
 		case 8:
-			if (input == month::August)
+			if (input == static_cast<int>(month::August))
 			{
 				cout << "Август" << endl;
 			}
 		case 9:
-			if (input == month::September)
+			if (input == static_cast<int>(month::September))
 			{
 				cout << "Сентябрь" << endl;
 			}
 		case 10:
-			if (input == month::October)
+			if (input == static_cast<int>(month::October))
 			{
 				cout << "Октябрь" << endl;
 			}
 		case 11:
-			if (input == month::November)
+			if (input == static_cast<int>(month::November))
 			{
 				cout << "Ноябрь" << endl;
 			}
 		case 12:
-			if (input == month::December)
+			if (input == static_cast<int>(month::December))
 			{
 				cout << "Декабрь" << endl;
 			}
