@@ -1,9 +1,3 @@
-/*Напишите программу, которая спрашивает у пользователя номер месяца и выводит на экран название месяца, введённого пользователем.
-
-Если пользователь ввёл некорректный номер месяца - сообщите ему об этом
-
-Спрашивайте пользователя до тех пор, пока он не введёт 0*/
-
 #include <iostream>
 
 using namespace std;
@@ -24,6 +18,27 @@ enum class month
 	December
 };
 
+string stringify_month(int month_number)
+{
+	switch (static_cast<month>(month_number))
+	{
+	case month::January: return "Январь";
+	case month::February: return "Февраль";
+	case month::March: return "Март";
+	case month::April: return "Апрель";
+	case month::May: return "Май";
+	case month::June: return "Июнь";
+	case month::July: return "Июль";
+	case month::August: return "Август";
+	case month::September: return "Сентябрь";
+	case month::October: return "Октябрь";
+	case month::November: return "Ноябрь";
+	case month::December: return "Декабрь";
+
+	default: return "";
+	};
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Rus");
@@ -35,80 +50,17 @@ int main()
 		cout << "Введите номер месяца: ";
 		cin >> input;
 
-		switch (input)
+		if (input < 0 || input > 12)
 		{
-		case 0:
-			if (input == 0)
-			{
-				cout << "До свидания";
-				break;
-			}
-		case 1:
-			if (input == static_cast<int>(month::January))
-			{
-				cout << "Январь" << endl;
-			}
-		case 2:
-			if (input == static_cast<int>(month::February))
-			{
-				cout << "Февраль" << endl;
-			}
-		case 3:
-			if (input == static_cast<int>(month::March))
-			{
-				cout << "Март" << endl;
-			}
-		case 4:
-			if (input == static_cast<int>(month::April))
-			{
-				cout << "Апрель" << endl;
-			}
-		case 5:
-			if (input == static_cast<int>(month::May))
-			{
-				cout << "Май" << endl;
-			}
-		case 6:
-			if (input == static_cast<int>(month::June))
-			{
-				cout << "Июнь" << endl;
-			}
-		case 7:
-			if (input == static_cast<int>(month::July))
-			{
-				cout << "Июль" << endl;
-			}
-		case 8:
-			if (input == static_cast<int>(month::August))
-			{
-				cout << "Август" << endl;
-			}
-		case 9:
-			if (input == static_cast<int>(month::September))
-			{
-				cout << "Сентябрь" << endl;
-			}
-		case 10:
-			if (input == static_cast<int>(month::October))
-			{
-				cout << "Октябрь" << endl;
-			}
-		case 11:
-			if (input == static_cast<int>(month::November))
-			{
-				cout << "Ноябрь" << endl;
-			}
-		case 12:
-			if (input == static_cast<int>(month::December))
-			{
-				cout << "Декабрь" << endl;
-			}
-		default:
-			if (input > 12 || input < 0)
-			{
-				cout << "Неправильный номер!" << endl;
-				break;
-			}
+			cout << "Неправильный номер!" << endl;
+			continue;
 		}
-	} while (input != 0);
+		if (input == 0)
+		{
+			cout << "До свидания" << endl;
+			break;
+		}
+		cout << stringify_month(input) << endl;
+	} while (true);
+
 }
